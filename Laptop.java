@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 class Laptop {
@@ -13,6 +15,17 @@ class Laptop {
         this.os = os;
         this.ram = ram;
         this.hdd = hdd;
+    }
+
+    public static List<String> propForFilter(){
+        List<String> list = new ArrayList<>();
+        list.add("модель");
+        list.add("цвет");
+        list.add("операционная работа");
+        list.add("оперативная память");
+        list.add("жесткий диск");
+
+        return list;
     }
 
     public String getModel(){
@@ -59,10 +72,10 @@ class Laptop {
     public String toString() {
         return "Laptop {" + 
                 "модель -> " + model + 
-                ",цвет -> " + color +
-                ",операционная система -> " + os +
-                ",оперативная память -> " + ram +
-                ",жесткий диск -> " + hdd +
+                "; цвет -> " + color +
+                "; операционная система -> " + os +
+                "; оперативная память -> " + ram +
+                "; жесткий диск -> " + hdd +
                 "}";
     }
 
