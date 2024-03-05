@@ -21,7 +21,7 @@ public class Main {
 
     public static int getUserFilteringCriterion(){
         Scanner scanner = new Scanner(System.in);
-
+        
         System.out.println("Выберите нужный критерий(введите соответствующую цифру):");
         System.out.println("1 - Модель");
         System.out.println("2 - Цвет");
