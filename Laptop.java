@@ -3,13 +3,13 @@ import java.util.List;
 import java.util.Objects;
 
 class Laptop {
-    private String model; //поля класса
+    private String model;
     private String color;
     private String os;
     private int ram;
     private int hdd;
 
-    public Laptop(String model, String color, String os, int ram, int hdd){ //конструктор класса, то что будет запрашиваться при создании экземпляра
+    public Laptop(String model, String color, String os, int ram, int hdd){ 
         this.model = model;
         this.color = color;
         this.os = os;
@@ -17,7 +17,7 @@ class Laptop {
         this.hdd = hdd;
     }
 
-    public static List<String> propForFilter(){ //
+    public static List<String> propForFilter(){
         List<String> list = new ArrayList<>();
         list.add("модель");
         list.add("цвет");
@@ -69,7 +69,7 @@ class Laptop {
     }
 
     @Override
-    public String toString() { //переопределение tostring, то как будет выводиться каждый элемент множества
+    public String toString() {
         return "Laptop {" + 
                 "модель -> " + model + 
                 "; цвет -> " + color +
@@ -79,7 +79,7 @@ class Laptop {
                 "}";
     }
 
-    public boolean equals(Object obj){ //переопределение equals
+    public boolean equals(Object obj){
         if(this == obj) return true;
         if(obj == null || getClass() != obj.getClass()) return false;
         Laptop laptop = (Laptop) obj;
@@ -88,8 +88,7 @@ class Laptop {
                 laptop.hdd == hdd;
     }
 
-    public int hashCode() { //переопределение hashcode
+    public int hashCode() {
         return Objects.hash(model, color, os, ram, hdd);
     }
 }
-

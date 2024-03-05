@@ -2,6 +2,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+
 public class Main {
     public static void main(String[] args) {
         
@@ -14,68 +15,36 @@ public class Main {
         laptops.add(lt0);
         laptops.add(lt1);
         laptops.add(lt2);
-
-        getCriterionUser();
     }
 
-    public static void getCriterionUser(){
+    public static int getUserFilteringCriterion(){
         Scanner scanner = new Scanner(System.in);
-        try {
-        } catch(Exception e) {
-            e.printStackTrace();
-        } finally {
-            scanner.close();
-        }
-        
-        while (true) {
-            System.out.println("Введите номер интересующего критерия: \n 1.Модель;\n 2.Цвет;\n 3.Операционная система;\n 4.Объем оперативной памяти;\n 5.Объем жесткого диска;");
-            switch (scanner.nextInt()) {
-                case 1:
-                    System.out.println("Введите номер интересующей модели: \n 1.Aplle Air UltraMegaMax Pro;\n 2.Gigabyte G5;\n 3.Asus a515;\n");
-                    switch (scanner.nextInt()) {
-                        case 1:
-                            System.out.println();
-                            break;
-                        case 2:
-                            System.out.println();
-                            break;
-                        case 3:
-                            System.out.println();
-                            break;
-                    }
-                    break;
-                case 2:
-                    System.out.println("Введите номер интересующего цвета: \n 1.Золотой;\n 2.Черный;\n 3.Белый;\n");
-                    switch (scanner.nextInt()) {
-                        case 1:
-                            System.out.println();
-                            break;
-                        case 2:
-                            System.out.println();
-                            break;
-                        case 3:
-                            System.out.println();
-                            break;
-                    }
-                case 3:
-                    System.out.println("Введите номер интересующего цвета: \n 1.Золотой;\n 2.Черный;\n 3.Белый;\n");
-                    switch (scanner.nextInt()) {
-                        case 1:
-                            System.out.println();
-                            break;
-                        case 2:
-                            System.out.println();
-                            break;
-                        case 3:
-                            System.out.println();
-                            break;
-                    }
-                case 4:
-                    break;
-                case 5:
-                    break;
-                }
-        }
 
+        System.out.println("Выберите нужный критерий(введите соответствующую цифру):");
+        System.out.println("1 - Модель");
+        System.out.println("2 - Цвет");
+        System.out.println("3 - Операционная система");
+        System.out.println("4 - ОЗУ");
+        System.out.println("5 - объем ЖД");
+
+        int criterion = scanner.nextInt();
+        scanner.close();
+
+        return criterion;
+    }
+
+    public static int getMinFilterValue(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите минимальное значение выбранного критерия: ");
+
+        int minValue = scanner.nextInt();
+        scanner.close();
+
+        return minValue;
+    }
+
+    public static void filterAndPrint(int criterion, int value){
+        
     }
 }
