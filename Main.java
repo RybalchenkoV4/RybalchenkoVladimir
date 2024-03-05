@@ -15,6 +15,8 @@ public class Main {
         laptops.add(lt0);
         laptops.add(lt1);
         laptops.add(lt2);
+
+        filterAndPrint(getUserFilteringCriterion(), getMinFilterValue(), laptops);
     }
 
     public static int getUserFilteringCriterion(){
@@ -28,23 +30,52 @@ public class Main {
         System.out.println("5 - объем ЖД");
 
         int criterion = scanner.nextInt();
-        scanner.close();
 
         return criterion;
     }
 
-    public static int getMinFilterValue(){
+    public static String getMinFilterValue(){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите минимальное значение выбранного критерия: ");
 
-        int minValue = scanner.nextInt();
-        scanner.close();
+        String minValue = scanner.nextLine();
 
         return minValue;
     }
 
-    public static void filterAndPrint(int criterion, int value){
-        
+    public static void filterAndPrint(int criterion, String value, Set<Laptop> laptops){
+        for (Laptop laptop : laptops) {
+            switch (criterion) {
+                case 1:
+                    if(laptop.getModel().toLowerCase().contains(value.toLowerCase())){
+                        System.out.println(laptop);
+                    }
+                    break;
+                case 2:
+                    if(laptop.getColor().toLowerCase().contains(value.toLowerCase())){
+                        System.out.println(laptop);
+                    }
+                    break;
+                case 3:
+                    if(laptop.getOs().toLowerCase().contains(value.toLowerCase())){
+                        System.out.println(laptop);
+                    }
+                    break;
+                case 4:
+                    if(laptop.getRam() >= Integer.parseInt(value)){
+                        System.out.println(laptop);
+                    }
+                    break;
+                case 5:
+                    if(laptop.getHdd() >= Integer.parseInt(value)){
+                        System.out.println(laptop);
+                    }
+                    break;
+                default:
+                    continue;
+
+            }
+        }
     }
 }
