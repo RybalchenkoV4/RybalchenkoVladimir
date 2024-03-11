@@ -40,7 +40,7 @@ public class Main {
         System.out.println("Введите минимальное значение выбранного критерия: ");
 
         String minValue = scanner.nextLine();
-
+        scanner.close();
         return minValue;
     }
 
